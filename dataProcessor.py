@@ -11,7 +11,7 @@ def read_json_file(file_path):
   except json.JSONDecodeError:
     raise ValueError(f"Invalid JSON format in file: {file_path}")
   
-def average_age_country(file_path):
+def average_age_country(file_path, age_transform_func = None):
   try:
     # Dicionário para rastrear as idades por país
     age_by_country = {}
@@ -21,6 +21,17 @@ def average_age_country(file_path):
     for person in data:
       age = person['age']
       country = person['country']
+
+      # Ignora entradas com campos ausentes ou nulos
+      if age is not None and country:
+        if age_transform_func:
+          age = age_transform_func(age)
+        if country in age_by_country:
+          if age is not None:
+            age_by_country[country].append(age)
+        else:
+          if age is not None:
+            age_by_country[country] = [age]
 
       # Adiciona a idade à lista de idades do país
       if country in age_by_country:
