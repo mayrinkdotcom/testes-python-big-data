@@ -55,3 +55,6 @@ def average_age_country(file_path, age_transform_func = None):
   except Exception as e:
     print("An error occurred while calculating the average age and count.")
     print(e)
+
+def years_to_months(age_in_years):
+  return age_in_years * 12
