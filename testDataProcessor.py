@@ -1,6 +1,6 @@
 import os
 import unittest
-from dataProcessor import read_json_file, average_age_count
+from dataProcessor import read_json_file, average_age_country
 
 class TestDataProcessor(unittest.TestCase):
 	def test_read_json_file_success(self):
@@ -13,7 +13,10 @@ class TestDataProcessor(unittest.TestCase):
 		self.assertEqual(data[0]['name'], 'Mary Yang')
 		self.assertEqual(data[1]['age'], 48)
 		
-		obj_average = average_age_count(file_path)
+		obj_avg_age_country = average_age_country(file_path)
+		print("objeto de média de idades por país:", format(obj_avg_age_country))
+		self.assertEqual(obj_avg_age_country['BR'], 38.53900709219858)
+		
 
 	def test_read_json_file_file_not_found(self):
 		with self.assertRaises(FileNotFoundError):
