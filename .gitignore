@@ -1,0 +1,44 @@
+# Arquivos e diretórios gerados automaticamente
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+
+# Ambiente virtual (assumindo que você está usando virtualenv)
+venv/
+env/
+
+# Arquivos de configuração
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.log
+*.swp
+*.swo
+
+# Dependências do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Arquivos de configuração do IDE
+.idea/
+.vscode/
+*.code-workspace
+*.code-workspace.json
+
+# Logs e saída de depuração
+logs/
+*.log
+
+# Arquivos gerados
+*.lock
+*.log
+*.tmp
+*.out
+
+# Ignore arquivos específicos (substitua 'example.txt' pelo nome dos arquivos a serem ignorados)
+example.txt
